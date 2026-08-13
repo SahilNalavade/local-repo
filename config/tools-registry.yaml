@@ -35,3 +35,32 @@ jira_create_issue:
   required_credentials: ["op://Engineering/Jira/api_token", "op://Engineering/Jira/email"]
   network_allowlist: ["*.atlassian.net"]
   description: "Create a Jira issue (write)."
+
+# --- library/notion@1.1.0 ---
+notion_search:
+  write: false
+  connection: notion
+  required_credentials: ["op://Engineering/Notion/token"]
+  network_allowlist: ["api.notion.com"]
+  description: "Search pages and databases shared with the integration (read-only)."
+
+notion_read_page:
+  write: false
+  connection: notion
+  required_credentials: ["op://Engineering/Notion/token"]
+  network_allowlist: ["api.notion.com"]
+  description: "Read a Notion page's block content (read-only)."
+
+notion_append_blocks:
+  write: true
+  connection: notion
+  required_credentials: ["op://Engineering/Notion/token"]
+  network_allowlist: ["api.notion.com"]
+  description: "Append blocks to an existing Notion page (write)."
+
+notion_create_page:
+  write: true
+  connection: notion
+  required_credentials: ["op://Engineering/Notion/token"]
+  network_allowlist: ["api.notion.com"]
+  description: "Create a new page under an existing parent page (write)."
